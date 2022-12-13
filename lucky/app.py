@@ -9,7 +9,9 @@ import pandas as pd
 st.title("조추첨 페이지")
 st.header("여러분의 참여를 환영합니다!")
 
-st.image(./lucky/tori.jpg)
+# ./ 는 가장 윗층
+# ./는 ./lucky
+st.image("./lucky/tori.jpg")
 
 # 추첨 대상인 13명의 이름을 넣을 수 있는 text_input
 # 4 x 4 (row, col)
