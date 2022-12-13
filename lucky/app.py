@@ -42,8 +42,9 @@ for idx, col in enumerate(columns2): # 인덱스와 객체에 입력
 # np.random.choice 추출해서 이름들, 목록
 # 1. st.session_state - n과 g 섞여있음
 ss = pd.Series(st.session_state) # 딕셔너리
-#st.write(ss)
+# st.write(ss)
 ss2 = ss[ss.ne("")] #ss[ss != ""] # ne는 빈 값이 아닐경우!
+st.write(ss)
 #2. df 형태로 정리
 # <추첨 버튼>
 # 13개의 짝을 지어서 표시해줄 그래픽
