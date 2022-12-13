@@ -12,7 +12,10 @@ st.header("여러분의 참여를 환영 합니다.")
 # 열을 배치하는 메소드 
 columns = st.columns(4) # 화면을 열로 나누어서 배치
 for idx, col in enumerate(columns): # 인덱스와 객체에 입력
-    col.text_input("조 추첨대상", key=idx)
+    # col.text_input("조 추첨대상", key=idx)
+    for idx2 in range(4):
+        # key가 겹치면 안 됨
+        col.text_input(f"조 추첨 대상 {idx+1 + idx2 * 4}", key=f"{idx+1 + idx2 * 4}")
 
 # 13명이 소속될 조 이름을 넣을 위치
 
