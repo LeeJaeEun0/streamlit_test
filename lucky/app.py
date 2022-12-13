@@ -39,12 +39,16 @@ for idx, col in enumerate(columns2): # 인덱스와 객체에 입력
         # col 안에 메소드를 통해서 요소들을 생성해주겠다
         col.text_input(f"조 목록 {idx+1 + idx2 * 4}", key=f"g{idx+1 + idx2 * 4}")
 
-# np.random.choice 추출해서 이름들, 목록
-# 1. st.session_state - n과 g 섞여있음
-ss = pd.Series(st.session_state) # 딕셔너리
+# np.random.choice -> 추출해서 이름들, 목록
+# 1. st.session_state - n, g가 섞여있음
+ss = pd.Series(st.session_state) # 딕셔너리 -> 시리즈
 # st.write(ss)
-ss2 = ss[ss.ne("")] #ss[ss != ""] # ne는 빈 값이 아닐경우!
-st.write(ss)
+# ss2 = ss[ss != ""]
+ss2 = ss[ss.ne("")]
+st.write(ss2)
+n_idx = ss2.index.str.contains('n')
+n_date = ss[n_index]
+st.write(n_date)
 #2. df 형태로 정리
 # <추첨 버튼>
 # 13개의 짝을 지어서 표시해줄 그래픽
