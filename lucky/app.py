@@ -2,7 +2,7 @@
 # streamlit 라이브러리 호출
 import streamlit as st
 import numpy as np
-
+import pandas as pd
 
 # st.write() 마크다운
 st.title("조 추첨 페이지")
@@ -37,8 +37,13 @@ for idx, col in enumerate(columns2): # 인덱스와 객체에 입력
     for idx2 in range(4): # 4번호출 # 행의 위치
         # key가 겹치면 안 됨
         # col 안에 메소드를 통해서 요소들을 생성해주겠다
-        col.text_input(f"조 추첨 대상 {idx+1 + idx2 * 4}", key=f"g{idx+1 + idx2 * 4}")
+        col.text_input(f"조 목록 {idx+1 + idx2 * 4}", key=f"g{idx+1 + idx2 * 4}")
 
-
+# np.random.choice 추출해서 이름들, 목록
+# 1. st.session_state - n과 g 섞여있음
+ss = pd.Series(st.session_state) # 딕셔너리
+#st.write(ss)
+ss2 = ss[ss.ne("")] #ss[ss != ""] # ne는 빈 값이 아닐경우!
+#2. df 형태로 정리
 # <추첨 버튼>
 # 13개의 짝을 지어서 표시해줄 그래픽
