@@ -8,7 +8,11 @@ st.title("조 추첨 페이지")
 st.header("여러분의 참여를 환영 합니다.")
 
 # 추첨대상인 13명의 이름을 넣을 수 있는 text_input
-st.text_input("조 추첨대상")
+# 3 x 4 의 모습으로 입력하기
+# 열을 배치하는 메소드 
+columns = st.columns(4)
+for c in enumerate(columns):
+    st.text_input("조 추첨대상")
 
 # 13명이 소속될 조 이름을 넣을 위치
 
